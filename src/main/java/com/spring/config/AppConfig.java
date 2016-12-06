@@ -10,12 +10,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-/**
- * http://viralpatel.net/blogs/spring-4-mvc-tutorial-maven-example/
- *
- *  mvn clean install
- *  mvn tomcat7:run
- */
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.spring")

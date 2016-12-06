@@ -21,4 +21,9 @@ public class UserController
         model.addAttribute("listUser", this.userDAO.getListUsers());
         return "users/listUsers";
     }
+
+    public String addUser(final Model model)
+    {
+        return "users/addUser";
+    }
 }
