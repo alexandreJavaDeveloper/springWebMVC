@@ -1,0 +1,1 @@
+127.0.0.1 - - [06/Dec/2016:18:44:03 -0200] "GET /HelloWorld/listUsers HTTP/1.1" 200 652 http-bio-8080-exec-1 682
