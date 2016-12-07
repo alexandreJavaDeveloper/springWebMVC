@@ -4,9 +4,13 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.dao.UserDAO;
+import com.spring.vo.UserVO;
 
 @Controller
 public class UserController
@@ -14,16 +18,22 @@ public class UserController
     @Resource(name = "userDAO")
     private UserDAO userDAO;
 
-    @GetMapping("/listUsers")
-    public String listUsers(final Model model)
+    @RequestMapping("/listUsers")
+    public ModelAndView listUsers(final Model model)
     {
-        model.addAttribute("name", "Alexandre Silva");
-        model.addAttribute("listUser", this.userDAO.getListUsers());
-        return "users/listUsers";
+        System.out.println("\nListing users...");
+        model.addAttribute("userForm", new UserVO());
+        model.addAttribute("userNameLogged", "Alexandre da Silva");
+        model.addAttribute("listUser", this.userDAO.getListUser());
+
+        return new ModelAndView("users/listUsers", "command", model);
     }
 
-    public String addUser(final Model model)
+    @RequestMapping(value = "/saveUser", method = RequestMethod.POST)
+    public ModelAndView saveUser(@ModelAttribute("userForm")
+    final UserVO userVO)
     {
-        return "users/addUser";
+        this.userDAO.createOrUpdate(userVO);
+        return new ModelAndView("redirect:/listUsers");
     }
 }

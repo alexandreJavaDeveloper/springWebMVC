@@ -1,0 +1,10 @@
+127.0.0.1 - - [07/Dec/2016:11:52:19 -0200] "GET /HelloWorld/listUsers HTTP/1.1" 200 1988 http-bio-8080-exec-1 802
+127.0.0.1 - - [07/Dec/2016:11:52:19 -0200] "GET /HelloWorld/resources/css/style.css HTTP/1.1" 304 - http-bio-8080-exec-2 7
+127.0.0.1 - - [07/Dec/2016:11:52:19 -0200] "GET /HelloWorld/resources/css/bootstrap.min.css HTTP/1.1" 304 - http-bio-8080-exec-3 4
+127.0.0.1 - - [07/Dec/2016:11:52:19 -0200] "GET /HelloWorld/resources/js/bootstrap.min.js HTTP/1.1" 304 - http-bio-8080-exec-5 2
+127.0.0.1 - - [07/Dec/2016:11:52:19 -0200] "GET /HelloWorld/resources/js/jquery-2.1.4.js HTTP/1.1" 304 - http-bio-8080-exec-4 3
+127.0.0.1 - - [07/Dec/2016:11:52:19 -0200] "GET /HelloWorld/resources/css/bootstrap.min.css.map HTTP/1.1" 404 1043 http-bio-8080-exec-6 8
+127.0.0.1 - - [07/Dec/2016:11:52:26 -0200] "POST /HelloWorld/saveUser HTTP/1.1" 302 - http-bio-8080-exec-10 21
+127.0.0.1 - - [07/Dec/2016:11:52:26 -0200] "GET /HelloWorld/listUsers HTTP/1.1" 200 2046 http-bio-8080-exec-10 4
+127.0.0.1 - - [07/Dec/2016:11:52:33 -0200] "POST /HelloWorld/saveUser HTTP/1.1" 302 - http-bio-8080-exec-3 2
+127.0.0.1 - - [07/Dec/2016:11:52:33 -0200] "GET /HelloWorld/listUsers HTTP/1.1" 200 2095 http-bio-8080-exec-3 3

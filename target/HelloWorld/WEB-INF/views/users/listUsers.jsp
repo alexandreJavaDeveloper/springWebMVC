@@ -1,4 +1,5 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +13,7 @@
 <body>
 	<h2>User list</h2>
 	
-	<p>Welcome, ${name}</p>
+	<p>Welcome, ${userNameLogged}</p>
 	
 	<table>
 		<tr>
@@ -28,24 +29,31 @@
 		</c:forEach>
 	</table>
 	
-	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#addUserModal">Add User</button>
 	
-	<!-- Modal -->
-	<div id="myModal" class="modal fade" role="dialog">
+	<!-- add user Modal -->
+	<div id="addUserModal" class="modal fade" role="dialog">
 		<div class="modal-dialog">
-	
+		
 		    <!-- Modal content-->
 		    <div class="modal-content">
 		    	<div class="modal-header">
 		        	<button type="button" class="close" data-dismiss="modal">&times;</button>
 		        	<h4 class="modal-title">Modal Header</h4>
 		      	</div>
-		      	<div class="modal-body">
-		        	<p>Some text in the modal.</p>
-		      	</div>
-		      	<div class="modal-footer">
-		        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		      	</div>
+		      	
+		      	<form:form method="post" modelAttribute="userForm" action="saveUser">  
+			      	<div class="modal-body">
+			        	<p>Add user</p>
+			        	Name: <form:input path="name" class="form-control input-sm" />
+			        	Age: <form:input path="age" class="form-control input-sm" />
+			      	</div>
+			      	
+			      	<div class="modal-footer">
+			      		<button type="submit" class="btn btn-default">Save</button>
+			        	<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+			      	</div>
+		      	 </form:form>
 		    </div>
 		</div>
 	</div>
