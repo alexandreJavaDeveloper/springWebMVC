@@ -1,5 +1,4 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,46 +16,22 @@
 	
 	<table>
 		<tr>
-			<td>Nome</td>
-			<td>Idade</td>
+			<td>Name</td>
+			<td>Age</td>
+			<td></td>
+			<td></td>
 		</tr>
 		
 		<c:forEach var="user" items="${listUser}">
 			<tr>
 				<td>${user.name}</td>
 				<td>${user.age}</td>
+				<td><a href="editForm/${user.id}">Edit</a></td>
+				<td><a href="deleteUser/${user.id}">Remove</a></td>
 			</tr>
 		</c:forEach>
 	</table>
 	
-	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#addUserModal">Add User</button>
-	
-	<!-- add user Modal -->
-	<div id="addUserModal" class="modal fade" role="dialog">
-		<div class="modal-dialog">
-		
-		    <!-- Modal content-->
-		    <div class="modal-content">
-		    	<div class="modal-header">
-		        	<button type="button" class="close" data-dismiss="modal">&times;</button>
-		        	<h4 class="modal-title">Modal Header</h4>
-		      	</div>
-		      	
-		      	<form:form method="post" modelAttribute="userForm" action="saveUser">  
-			      	<div class="modal-body">
-			        	<p>Add user</p>
-			        	Name: <form:input path="name" class="form-control input-sm" />
-			        	Age: <form:input path="age" class="form-control input-sm" />
-			      	</div>
-			      	
-			      	<div class="modal-footer">
-			      		<button type="submit" class="btn btn-default">Save</button>
-			        	<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-			      	</div>
-		      	 </form:form>
-		    </div>
-		</div>
-	</div>
-	
+	<a class="btn btn-info btn-lg" href="createForm">Add User</a>
 </body>
 </html>

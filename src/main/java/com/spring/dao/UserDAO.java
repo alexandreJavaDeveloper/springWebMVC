@@ -53,4 +53,16 @@ public class UserDAO
     {
         return ++this.currentKey;
     }
+
+    @SuppressWarnings("boxing")
+    public void delete(final int id)
+    {
+        this.mapUser.remove(id);
+    }
+
+    @SuppressWarnings("boxing")
+    public UserVO findById(final int id)
+    {
+        return this.mapUser.get(id);
+    }
 }
